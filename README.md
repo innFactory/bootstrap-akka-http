@@ -1,2 +1,4 @@
-# bootstrap-akka-http
-bootstrap template for akka-http services
+Akka Http Bootstrap
+=========================
+
+More infos soon...
