@@ -1,8 +1,8 @@
 Akka Http Bootstrap
 =========================
 
-[![travis-ci.org](https://travis-ci.org/innFactory/bootstrap-akka-http.svg?branch=master)](https://travis-ci.org/innFactory/bootstrap-akka-http.svg)
-[![codecov.io](https://codecov.io/github/innFactory/bootstrap-akka-http.svg/coverage.svg?branch=master)](https://codecov.io/github/innFactory/bootstrap-akka-http.svg?branch=master)
+[![travis-ci.org](https://travis-ci.org/innFactory/bootstrap-akka-http.svg?branch=master)](https://travis-ci.org/innFactory/bootstrap-akka-http)
+[![codecov.io](https://img.shields.io/codecov/c/github/innFactory/bootstrap-akka-http/master.svg?style=flat)](https://codecov.io/github/innFactory/bootstrap-akka-http)
 [![shields.io](http://img.shields.io/badge/license-Apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 [![jonato.de](https://img.shields.io/badge/Version-1.0-brightgreen.svg)](https://innFactory.de)
 
