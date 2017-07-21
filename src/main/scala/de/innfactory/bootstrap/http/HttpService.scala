@@ -23,6 +23,7 @@ class HttpService(authService: AuthService,
 
   val settings = CorsSettings.defaultSettings.copy(allowedMethods = List(GET, POST, HEAD, OPTIONS, DELETE))
 
+  // $COVERAGE-OFF$Routes are tested seperatly
   val routes =
     pathPrefix("v1") {
       cors(settings) {
@@ -32,5 +33,6 @@ class HttpService(authService: AuthService,
         dummyRouter.route
       }
     }
+  // $COVERAGE-ON$
 
 }
