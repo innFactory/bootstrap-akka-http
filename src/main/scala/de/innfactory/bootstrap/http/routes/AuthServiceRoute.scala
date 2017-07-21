@@ -13,19 +13,10 @@ class AuthServiceRoute(val authService: AuthService)(implicit executionContext: 
   import StatusCodes._
 
   val route = pathPrefix("auth") {
-    path("check") {
-      pathEndOrSingleSlash {
-        get {
-          authenticate { user =>
-            complete(Created -> user.toString)
-          }
-        }
-      }
-    } ~
-      path("") {
+     path("") {
         pathEndOrSingleSlash {
           get {
-            complete(Created -> "Welcome!")
+            complete(OK -> "Auth service available!")
           }
         }
       }

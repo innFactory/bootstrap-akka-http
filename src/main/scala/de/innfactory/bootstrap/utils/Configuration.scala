@@ -1,11 +1,11 @@
 package de.innfactory.bootstrap.utils
 
-import com.typesafe.config.ConfigFactory
+import com.typesafe.config.{Config, ConfigFactory}
 
 import scala.concurrent.duration.{FiniteDuration, MILLISECONDS}
 
-trait Config {
-  private val config = ConfigFactory.load()
+trait Configuration {
+  protected val config : Config = ConfigFactory.load()
   private val httpConfig = config.getConfig("http")
   private val databaseConfig = config.getConfig("database")
   private val authenticationConfig = config.getConfig("auth")

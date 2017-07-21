@@ -22,6 +22,7 @@ class SwaggerDocService(address: String, port: Int, system: ActorSystem)
   override val host = address + ":" + port
   override val info = Info(version = "1.0")
   override val externalDocs = Some(new ExternalDocs("More Info", "#noset"))
+  override val basePath: String = "/v1/"
   override val securitySchemeDefinitions = Map("basicAuth" -> new  ApiKeyAuthDefinition("Authorization", In.HEADER))
 
 }

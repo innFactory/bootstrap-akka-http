@@ -1,6 +1,5 @@
 package de.innfactory.bootstrap
 
-import akka.http.scaladsl.model.ContentTypes._
 import akka.http.scaladsl.model.StatusCodes._
 
 class AuthServiceTest extends BaseServiceTest {
@@ -10,13 +9,11 @@ class AuthServiceTest extends BaseServiceTest {
   }
 
   "Auth service" should {
-
     "should run" in new Context {
       Get(s"/auth/") ~> route ~> check {
-        status shouldBe Created
+        status shouldBe OK
       }
     }
-
   }
 
 }

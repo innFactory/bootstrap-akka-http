@@ -7,16 +7,16 @@ import ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors
 import ch.megard.akka.http.cors.scaladsl.settings.CorsSettings
 import de.innfactory.bootstrap.http.routes.{AuthServiceRoute, DummyServiceRoute, SwaggerUIRoute}
 import de.innfactory.bootstrap.services.{AuthService, DummyService, SwaggerDocService}
-import de.innfactory.bootstrap.utils.Config
+import de.innfactory.bootstrap.utils.Configuration
 
 import scala.concurrent.ExecutionContext
 
 class HttpService(authService: AuthService,
                   dummyService: DummyService
-                 )(implicit executionContext: ExecutionContext, actorSystem: ActorSystem) extends Config{
+                 )(implicit executionContext: ExecutionContext, actorSystem: ActorSystem) extends Configuration{
 
   val authRouter = new AuthServiceRoute(authService)
-  val dummyRouter = new DummyServiceRoute(dummyService)
+  val dummyRouter = new DummyServiceRoute(authService, dummyService)
 
   val swaggerRouter = new SwaggerUIRoute()
   val swaggerDocService = new SwaggerDocService(httpHost, httpPort, actorSystem)

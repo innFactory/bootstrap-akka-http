@@ -25,18 +25,14 @@ class DummyRepository()(implicit override val driver: JdbcProfile) extends Repos
 
 
   def find(id: Option[Long],
-           dummy: Option[String],
-           first: Long,
-           after: Long
+           dummy: Option[String]
           ): DBIO[Seq[Dummy]] = {
 
     MaybeFilter(tableQuery)
       .filter(id)(v => d => d.id === v)
       .filter(dummy)(v => d => d.dummy === v)
       .query
-      .sortBy(table => table.column[Long]("ID").asc)
-      //.drop(after)
-      .take(first)
+      .sortBy(table => table.column[Long]("id").asc)
       .result
   }
 

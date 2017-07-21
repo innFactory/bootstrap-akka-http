@@ -14,4 +14,10 @@ class DummyService()(implicit executionContext: ExecutionContext)  extends Persi
     }
   }
 
+  def getOne(id : Long) = {
+    executeOperation {
+      dummyRepository.find(Some(id), None)
+    }
+  }
+
 }

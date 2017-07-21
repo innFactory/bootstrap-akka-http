@@ -6,11 +6,11 @@ import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import de.innfactory.bootstrap.http.HttpService
 import de.innfactory.bootstrap.services.{AuthService, DummyService}
-import de.innfactory.bootstrap.utils.{AWSCognitoValidation, Config, FlywayService}
+import de.innfactory.bootstrap.utils.{AWSCognitoValidation, Configuration, FlywayService}
 
 import scala.concurrent.ExecutionContext
 
-object Main extends App with Config {
+object Main extends App with Configuration {
   implicit val actorSystem = ActorSystem()
   implicit val executor: ExecutionContext = actorSystem.dispatcher
   implicit val log: LoggingAdapter = Logging(actorSystem, getClass)

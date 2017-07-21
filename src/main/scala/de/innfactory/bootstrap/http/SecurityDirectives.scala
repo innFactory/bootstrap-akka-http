@@ -3,9 +3,9 @@ package de.innfactory.bootstrap.http
 import akka.http.scaladsl.server.Directive1
 import akka.http.scaladsl.server.directives.{BasicDirectives, FutureDirectives, HeaderDirectives, RouteDirectives}
 import de.innfactory.bootstrap.services.AuthService
-import de.innfactory.bootstrap.utils.Config
+import de.innfactory.bootstrap.utils.Configuration
 
-trait SecurityDirectives extends Config {
+trait SecurityDirectives extends Configuration {
 
   import BasicDirectives._
   import FutureDirectives._
