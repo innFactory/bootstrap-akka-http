@@ -17,7 +17,7 @@ import java.text.ParseException;
 import java.util.Map;
 
 public class AWSCognitoValidation implements Authentication {
-
+    // $COVERAGE-OFF$Disabling highlighting until it is rewritten in scala
     private JWKSource keySource;
     private String remoteJWKUrl = "";
     private LoggingAdapter log;
@@ -53,4 +53,5 @@ public class AWSCognitoValidation implements Authentication {
             return null;
         }
     }
+    // $COVERAGE-ON$
 }

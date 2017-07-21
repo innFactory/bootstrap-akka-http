@@ -30,7 +30,7 @@ This is a boilerplate template for a akka http service with slick and flyway dat
 * *HikariCP* as connection pool
 * Logging via *Log4j* with a xml template
 
-## Congiguration
+## Configuration
 * Start a PostgreSQL Database via RDS, Docker or locally
 * Create a Userpool with AWS Cognito if you need AWS Authentication.
 * Configure your application.conf and the docker.conf (`src/main/resources/`) (application.conf in test has to stay as it is, for running in a in-memory postgresql instance)

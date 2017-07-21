@@ -11,6 +11,7 @@ import de.innfactory.bootstrap.utils.{AWSCognitoValidation, Configuration, Flywa
 import scala.concurrent.ExecutionContext
 
 object Main extends App with Configuration {
+  // $COVERAGE-OFF$Main Application Wrapper
   implicit val actorSystem = ActorSystem()
   implicit val executor: ExecutionContext = actorSystem.dispatcher
   implicit val log: LoggingAdapter = Logging(actorSystem, getClass)
@@ -25,4 +26,5 @@ object Main extends App with Configuration {
   val httpService = new HttpService(authService, dummyService)
 
   Http().bindAndHandle(httpService.routes, httpHost, httpPort)
+  // $COVERAGE-ON$
 }

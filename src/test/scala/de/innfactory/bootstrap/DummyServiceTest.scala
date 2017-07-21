@@ -26,6 +26,12 @@ class DummyServiceTest extends BaseServiceTest with ScalaFutures {
         contentType shouldBe `application/json`
       }
     }
+
+    "test the entity" in {
+      val dummy = Dummy(Some(1), "Hello")
+      dummy.id shouldBe Some(1)
+      dummy.dummy shouldBe "Hello"
+    }
   }
 
 }
