@@ -4,9 +4,9 @@ import javax.ws.rs.Path
 
 import akka.http.scaladsl.server.Directives._
 import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport
-import de.innfactory.bootstrap.http.SecurityDirectives
+import de.innfactory.akka.{AuthService, JwtAuthDirectives}
 import de.innfactory.bootstrap.models.Dummy
-import de.innfactory.bootstrap.services.{AuthService, DummyService}
+import de.innfactory.bootstrap.services.DummyService
 import io.circe.generic.auto._
 import io.circe.syntax._
 import io.swagger.annotations._
@@ -15,7 +15,7 @@ import scala.concurrent.ExecutionContext
 
 @Path("dummy")
 @Api(value = "/dummy", produces = "application/json")
-class DummyServiceRoute(val authService: AuthService, val dummyService: DummyService)(implicit executionContext: ExecutionContext) extends FailFastCirceSupport with SecurityDirectives {
+class DummyServiceRoute(val authService: AuthService, val dummyService: DummyService)(implicit executionContext: ExecutionContext) extends FailFastCirceSupport with JwtAuthDirectives {
 
   import dummyService._
 

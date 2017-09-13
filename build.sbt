@@ -1,6 +1,6 @@
 name := "bootstrap-akka-http"
 organization := "de.innfactory"
-version := "1.0.0"
+version := "1.1.0"
 scalaVersion := Version.Scala
 
 libraryDependencies ++= {
@@ -12,6 +12,7 @@ libraryDependencies ++= {
     Library.akkaHttpCors,
     Library.akkaHttpCirce,
     Library.akkaStream,
+    Library.akkaJwt,
     Library.log4jCore,
     Library.slf4jLog4jBridge,
     Library.akkaLog4j,
@@ -20,7 +21,6 @@ libraryDependencies ++= {
     Library.postgresql,
     Library.slickRepo,
     Library.flywaydb,
-    Library.nimbusds,
     Library.circeCore,
     Library.circeGeneric,
     Library.circeParser,
